@@ -4,13 +4,13 @@ import { useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import { CATEGORIES, CITIES, PRODUCTS } from "@/lib/data";
 
-type ShopSearch = { q?: string; category?: string; deal?: boolean };
+type ShopSearch = { q: string; category: string; deal: boolean };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): ShopSearch => ({
-    q: typeof s.q === "string" ? s.q : undefined,
-    category: typeof s.category === "string" ? s.category : undefined,
-    deal: s.deal === true,
+    q: typeof s["q"] === "string" ? (s["q"] as string) : "",
+    category: typeof s["category"] === "string" ? (s["category"] as string) : "All",
+    deal: s["deal"] === true,
   }),
   head: () => ({
     meta: [
