@@ -29,13 +29,13 @@ type SortKey = "popular" | "newest" | "price-asc" | "price-desc" | "rating";
 
 function Shop() {
   const search = Route.useSearch();
-  const [category, setCategory] = useState(search.category ?? "All");
+  const [category, setCategory] = useState(search.category);
   const [city, setCity] = useState("All");
   const [maxPrice, setMaxPrice] = useState(120000);
   const [minRating, setMinRating] = useState(0);
   const [sort, setSort] = useState<SortKey>("popular");
-  const [query, setQuery] = useState(search.q ?? "");
-  const [dealsOnly, setDealsOnly] = useState(search.deal ?? false);
+  const [query, setQuery] = useState(search.q);
+  const [dealsOnly, setDealsOnly] = useState(search.deal);
 
   const results = useMemo(() => {
     let list = PRODUCTS.filter(

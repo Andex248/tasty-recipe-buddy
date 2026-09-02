@@ -183,7 +183,7 @@ function Home() {
             <Link
               key={c.name}
               to="/shop"
-              search={{ category: c.name }}
+              search={{ category: c.name, q: "", deal: false }}
               className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:border-primary hover:shadow-md"
             >
               <span className="text-3xl">{c.icon}</span>
