@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import { CATEGORIES, CITIES, PRODUCTS } from "@/lib/data";
 
-type ShopSearch = { q: string; category: string; deal: boolean };
+type ShopSearch = { q?: string | undefined; category?: string | undefined; deal?: boolean | undefined };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): ShopSearch => ({
@@ -29,13 +29,13 @@ type SortKey = "popular" | "newest" | "price-asc" | "price-desc" | "rating";
 
 function Shop() {
   const search = Route.useSearch();
-  const [category, setCategory] = useState(search.category);
+  const [category, setCategory] = useState(search.category ?? "All");
   const [city, setCity] = useState("All");
   const [maxPrice, setMaxPrice] = useState(120000);
   const [minRating, setMinRating] = useState(0);
   const [sort, setSort] = useState<SortKey>("popular");
-  const [query, setQuery] = useState(search.q);
-  const [dealsOnly, setDealsOnly] = useState(search.deal);
+  const [query, setQuery] = useState(search.q ?? "");
+  const [dealsOnly, setDealsOnly] = useState(search.deal ?? false);
 
   const results = useMemo(() => {
     let list = PRODUCTS.filter(
