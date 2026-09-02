@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/shop", label: "Shop" },
   { to: "/services", label: "Services" },
-  { to: "/shop", label: "Deals", search: { deal: true } },
+  { to: "/cart", label: "Cart" },
 ];
 
 export function Navbar() {
@@ -84,11 +84,11 @@ export function Navbar() {
                 className="w-full bg-transparent px-4 py-2.5 text-sm outline-none"
                 onKeyDown={(e) => {
                   if (e.key === "Enter")
-                    navigate({ to: "/shop", search: { q: query } });
+                    navigate({ to: "/shop", search: { q: query, category: "All", deal: false } });
                 }}
               />
               <button
-                onClick={() => navigate({ to: "/shop", search: { q: query } })}
+                onClick={() => navigate({ to: "/shop", search: { q: query, category: "All", deal: false } })}
                 className="bg-primary px-5 text-primary-foreground"
                 aria-label="Search"
               >
@@ -152,7 +152,6 @@ export function Navbar() {
               <Link
                 key={i}
                 to={l.to}
-                search={"search" in l ? l.search : undefined}
                 className="text-muted-foreground transition-colors hover:text-primary [&.active]:text-primary"
               >
                 {l.label}
@@ -168,7 +167,6 @@ export function Navbar() {
               <Link
                 key={i}
                 to={l.to}
-                search={"search" in l ? l.search : undefined}
                 onClick={() => setMobileOpen(false)}
                 className="block py-2 text-sm font-medium"
               >
