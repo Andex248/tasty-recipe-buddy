@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Send, Music2 } from "lucide-react";
-import logo from "@/assets/merkato-logo.jpg";
+import { LOGO_URL as logo } from "@/lib/brand";
 
 const SHOP_LINKS = ["Phones & Tablets", "Computers & Laptops", "TVs & Entertainment", "Home Appliances", "Fashion", "Electronics"];
 const COMPANY_LINKS = ["About Us", "Contact", "Help Center", "Become a Seller", "Careers"];

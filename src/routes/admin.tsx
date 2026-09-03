@@ -9,7 +9,7 @@ import {
   Store,
   Lock,
 } from "lucide-react";
-import logo from "@/assets/merkato-logo.jpg";
+import { LOGO_URL as logo } from "@/lib/brand";
 import { AdminAuthProvider, useAdminAuth } from "@/lib/admin-auth";
 
 export const Route = createFileRoute("/admin")({

@@ -3,7 +3,7 @@ import { Heart, MapPin, Menu, Search, ShoppingCart, User, X } from "lucide-react
 import { useState } from "react";
 import { CITIES, PRODUCTS } from "@/lib/data";
 import { useStore } from "@/lib/store";
-import logo from "@/assets/merkato-logo.jpg";
+import { LOGO_URL as logo } from "@/lib/brand";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
