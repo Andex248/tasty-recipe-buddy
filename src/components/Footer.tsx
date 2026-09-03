@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Send, Music2 } from "lucide-react";
+import { LOGO_URL as logo } from "@/lib/brand";
 
 const SHOP_LINKS = ["Phones & Tablets", "Computers & Laptops", "TVs & Entertainment", "Home Appliances", "Fashion", "Electronics"];
 const COMPANY_LINKS = ["About Us", "Contact", "Help Center", "Become a Seller", "Careers"];
@@ -11,9 +12,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold font-display text-lg font-bold text-gold-foreground">
-              M
-            </span>
+            <img src={logo} alt="MERKATO TV logo" className="h-9 w-9 rounded-lg object-cover" />
             <span className="font-display text-xl font-bold">MERKATO TV</span>
           </div>
           <p className="mt-3 text-sm opacity-80">
