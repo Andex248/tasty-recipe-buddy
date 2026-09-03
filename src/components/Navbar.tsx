@@ -3,6 +3,7 @@ import { Heart, MapPin, Menu, Search, ShoppingCart, User, X } from "lucide-react
 import { useState } from "react";
 import { CITIES, PRODUCTS } from "@/lib/data";
 import { useStore } from "@/lib/store";
+import logo from "@/assets/merkato-logo.jpg";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -64,9 +65,7 @@ export function Navbar() {
           </button>
 
           <Link to="/" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary font-display text-lg font-bold text-primary-foreground">
-              M
-            </span>
+            <img src={logo} alt="MERKATO TV logo" className="h-9 w-9 rounded-lg object-cover" />
             <span className="font-display text-xl font-bold tracking-tight">
               MERKATO<span className="text-primary"> TV</span>
             </span>
